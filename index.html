@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+
+
+    <script src="cookies.min.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+         alert("You ate: " + Cookies.get("chocolateCookie") + " of the Chocolate, " + Cookies.get("lemonCookie") + " of the Lemon and " + Cookies.get("sugarCookie")  + " of the Sugar Cookies.")
+       });
+    </script>
+
+
+    <h1>Please eat some cookies</h1>
+
+
+  <button id="chocolate">Chocolate Cookie</button>
+    <script>
+        function UpdateChocolateValue(){
+
+          var cookieCount = Cookies.get("chocolateCookie");
+          if (cookieCount === undefined){
+            Cookies.set("chocolateCookie", 1);
+          }
+          else{
+            cookieCount = parseInt(cookieCount);
+            Cookies.set("chocolateCookie", cookieCount + 1);
+          }
+        }
+        document.getElementById("chocolate").addEventListener("click", UpdateChocolateValue);
+    </script>
+
+
+  <button id="Lemon">Lemon Cookie</button>
+    <script>
+        function UpdateLemonValue(){
+
+          var cookieCount = Cookies.get("lemonCookie");
+          if (cookieCount === undefined){
+            Cookies.set("lemonCookie", 1);
+          }
+          else{
+            cookieCount = parseInt(cookieCount);
+            Cookies.set("lemonCookie", cookieCount + 1);
+          }
+        }
+        document.getElementById("Lemon").addEventListener("click", UpdateLemonValue);
+    </script>
+
+  <button id="sugar">Sugar Cookie</button>
+    <script>
+        function UpdateSugarValue(){
+
+          var cookieCount = Cookies.get("sugarCookie");
+          if (cookieCount === undefined){
+            Cookies.set("sugarCookie", 1);
+          }
+          else{
+            cookieCount = parseInt(cookieCount);
+            Cookies.set("sugarCookie", cookieCount + 1);
+          }
+        }
+        document.getElementById("sugar").addEventListener("click", UpdateSugarValue);
+    </script>
+
+
+<br><br>
+
+    <button id="clearCookies">Click here to pretend you didn't eat any cookies!</button>
+      <script>
+        function eraseCookie(){
+          Cookies.set("chocolateCookie", 0)
+          Cookies.set("lemonCookie", 0)
+          Cookies.set("sugarCookie", 0)
+        }
+          document.getElementById("clearCookies").addEventListener("click", eraseCookie);
+      </script>
+
+
+
+
+
+
+
+
+
+
+<!--
+
+        // add event listener
+        // check the current value in storeChocolateValue
+        // if that value is undefined
+        // set it to 1
+        // otherwise
+        // take that current value and add 1 and set that result to the cookie -->
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
